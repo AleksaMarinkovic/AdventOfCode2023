@@ -7,7 +7,7 @@ Each folder has a file with the solution, an input file , and a file containing 
 - [x] [Day 1](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%201)
 - [x] [Day 2](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%202)
 - [x] [Day 3](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%203)
-- [ ] [Day 4](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%204)
+- [X] [Day 4](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%204)
 - [ ] [Day 5](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%205)
 - [ ] [Day 6](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%206)
 - [ ] [Day 7](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%207)
