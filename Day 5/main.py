@@ -15,17 +15,6 @@ def map_to_new_location(map, input):
     return value
 
 
-def map_to_new_location_ranges(seed_range, maps):
-    location_ranges = []
-    ranges = seed_range
-    for map in maps:
-        map_output_ranges = []
-        for entry in map:
-            map_output_ranges.append([entry[0], entry[0] + entry[2]])
-            ### TODO
-    return location_ranges
-
-
 def parse_input(file_name):
     with open(file_name, 'r') as file:
         input = file.read().splitlines()
@@ -61,21 +50,4 @@ if __name__ == '__main__':
             value = map_to_new_location(maps[map_idx], value)
         location_values.append(value)
     print(min(location_values))
-    print(seeds)
-    new_seeds = []
-    # part 2
-    for idx in range(0, len(seeds) - 1, 2):
-        new_seeds.append([seeds[idx], seeds[idx] + seeds[idx + 1]])
-    print(new_seeds)
-    min_value = -1
-    i = 1
-    for new_seeds_idx in range(len(new_seeds)):
-        print("Seed range: " + str(i))
-        i += 1
-        for new_seed in range(new_seeds[new_seeds_idx][0], new_seeds[new_seeds_idx][1], 1):
-            value = new_seed
-            for map_idx in range(len(maps)):
-                value = map_to_new_location(maps[map_idx], value)
-            if min_value != -1 and value < min_value:
-                min_value = value
-    print(min_value)
+
