@@ -1,14 +1,14 @@
 # My take on the [Advent of Code](https://adventofcode.com/) 2023.
 Individual problems are divided into folders by days.
 
-Each folder has a file with the solution, an input file , and a file containing the original problem text.
+Each folder has a file with the solution. input is not sent to repo per AoC rules
 
 ### Below I will try to keep track of my progress.
 - [x] [Day 1](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%201)
 - [x] [Day 2](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%202)
 - [x] [Day 3](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%203)
-- [X] [Day 4](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%204)
-- [ ] [Day 5](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%205)
+- [x] [Day 4](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%204)
+- [x] [Day 5](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%205)
 - [ ] [Day 6](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%206)
 - [ ] [Day 7](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%207)
 - [ ] [Day 8](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%208)

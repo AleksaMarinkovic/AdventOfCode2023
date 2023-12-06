@@ -1,6 +1,4 @@
-map_types = ['seed-to-soil map:', 'soil-to-fertilizer map:', 'fertilizer-to-water map:', 'water-to-light map:',
-             'light-to-temperature map:', 'temperature-to-humidity map:', 'humidity-to-location map:']
-
+import time
 
 def parse_input(file_name):
     with open(file_name, 'r') as file:
@@ -40,17 +38,20 @@ def overlapping_nonoverlapping_range(ranges_x, ranges_y):
             end_y = range_y[1]
             if max(start_x, start_y) <= min(end_x, end_y):
                 # overlapping - these subranges are getting mapped
-                overlapping_subrange = [max(start_x, start_y), min(end_x, end_y)]
+                overlapping_subrange = [max(start_x, start_y), min(end_x, end_y), start_y]
                 overlapping_subranges.append(overlapping_subrange)
         # non overlapping - these subranges aren't getting mapped
         overlapping_subranges.sort()
         start = ranges_x[range_x_idx][0]
-        for i in range(ranges_x[range_x_idx][0], ranges_x[range_x_idx][1], 1):
-            for idx in range(len(overlapping_subranges)):
-                if i == overlapping_subranges[idx][0]:
-                    if start != overlapping_subranges[idx][0]:
-                        non_overlapping_subranges.append([start, overlapping_subranges[idx][0]])
-                    start = overlapping_subranges[idx][1]
+        for idx in range(len(overlapping_subranges)):
+            if idx == len(overlapping_subranges) - 1:
+                if overlapping_subranges[idx][1] != ranges_x[range_x_idx][1]:
+                    non_overlapping_subranges.append([overlapping_subranges[idx][1], ranges_x[range_x_idx][1]])
+            if start != overlapping_subranges[idx][0]:
+                non_overlapping_subranges.append([start, overlapping_subranges[idx][0]])
+                start = overlapping_subranges[idx][1]
+            else:
+                start = overlapping_subranges[idx][1]
         if start < ranges_x[range_x_idx][1]:
             non_overlapping_subranges.append([start, ranges_x[range_x_idx][1]])
         total_overlapping_subranges.extend(overlapping_subranges)
@@ -61,6 +62,7 @@ def overlapping_nonoverlapping_range(ranges_x, ranges_y):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     seeds, maps = parse_input("input.txt")
     new_seeds = []
     for idx in range(0, len(seeds) - 1, 2):
@@ -68,25 +70,23 @@ if __name__ == '__main__':
 
     x = new_seeds
     x.sort()
-    i = 0
     for map in maps:
-        if i == 1:
-            break
-        print("x: ")
-        print(x)
         y = []
         for entry in map:
-            y.append([entry[1], entry[1] + entry[2]])
+            y.append([entry[1], entry[1] + entry[2], entry[0]])
         y.sort()
-        print("y: ")
-        print(y)
         subranges_to_map, subranges_to_continue = overlapping_nonoverlapping_range(x, y)
-        print("subranges_to_map:")
-        print(subranges_to_map)
-        print("subranges_to_continue:")
-        print(subranges_to_continue)
-        # quit after 1 iteration until done with rest of implementation
-        i += 1
-        # mapped_subranges = []
-        # for subrange in subranges_to_map:
-        #    mapped_subranges.append()
+        mapped_subranges = []
+        for subrange in subranges_to_map:
+            # which map to use for the subrange
+            for y_entry in y:
+                if subrange[2] == y_entry[0]:
+                    mapped_subranges.append(
+                        [subrange[0] + y_entry[2] - y_entry[0], subrange[1] + y_entry[2] - y_entry[0]])
+
+        x = mapped_subranges
+        x.extend(subranges_to_continue)
+        x.sort()
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Answer: {min(min(x))} found in {elapsed_time*1000} ms")
