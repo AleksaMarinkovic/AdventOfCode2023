@@ -66,6 +66,6 @@ if __name__ == '__main__':
     for card_idx in range(len(input)):
         total_number_of_copies += input[card_idx][2]
     # part 1 solution
-    print(total_score)
+    print(f"Part 1: {total_score}")
     # part 2 solution
-    print(total_number_of_copies)
+    print(f"Part 2: {total_number_of_copies}")

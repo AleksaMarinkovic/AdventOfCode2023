@@ -68,7 +68,15 @@ def parse_input(file_name):
 if __name__ == '__main__':
     input = parse_input("input.txt")
     # use unique symbols for part one
-    #unique_symbols = extract_unique_symbols(input)
+    unique_symbols = extract_unique_symbols(input)
+    line_length = get_line_length(input)
+    total_sum = 0
+    for line_idx in range(1, len(input) - 1, 1):
+        for char_idx in range(len(input[line_idx])):
+            if input[line_idx][char_idx] in unique_symbols:
+                total_sum += find_neighbouring_numbers(input[line_idx - 1], input[line_idx], input[line_idx + 1],
+                                                       char_idx)
+    print(f"Part 1: {total_sum}")
     # use this for part two
     unique_symbols = ['*']
     line_length = get_line_length(input)
@@ -77,5 +85,5 @@ if __name__ == '__main__':
         for char_idx in range(len(input[line_idx])):
             if input[line_idx][char_idx] in unique_symbols:
                 total_sum += find_neighbouring_numbers(input[line_idx - 1], input[line_idx], input[line_idx + 1],
-                                                       char_idx,2)
-    print(total_sum)
+                                                       char_idx, 2)
+    print(f"Part 2: {total_sum}")

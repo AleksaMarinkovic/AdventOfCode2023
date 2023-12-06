@@ -62,5 +62,5 @@ if __name__ == '__main__':
     for game_idx in range(len(input)):
         for set_idx in range(len(input[game_idx])):
             input[game_idx][set_idx] = convert_set_to_rgb(input[game_idx][set_idx])
-    print(find_possible_games_sum(input))
-    print(minimum_power(input))
+    print(f"Part 1: {find_possible_games_sum(input)}")
+    print(f"Part 2: {minimum_power(input)}")

@@ -31,9 +31,14 @@ def extract_calibration_value(code):
 
 if __name__ == '__main__':
     initial_codes = parse_input("input.txt")
-    # Comment out the line below for solution to Step 1
+
+    codes_numerical_only = []
+    for line in initial_codes:
+        codes_numerical_only.append(extract_calibration_value(line))
+    print(f"Part 1: {sum(codes_numerical_only)}")
+
     initial_codes = replace_with_numerical(initial_codes)
     codes_numerical_only = []
     for line in initial_codes:
         codes_numerical_only.append(extract_calibration_value(line))
-    print(sum(codes_numerical_only))
+    print(f"Part 2: {sum(codes_numerical_only)}")
