@@ -1,7 +1,3 @@
-map_types = ['seed-to-soil map:', 'soil-to-fertilizer map:', 'fertilizer-to-water map:', 'water-to-light map:',
-             'light-to-temperature map:', 'temperature-to-humidity map:', 'humidity-to-location map:']
-
-
 def map_to_new_location(map, input):
     input_map = []
     output_map = []
