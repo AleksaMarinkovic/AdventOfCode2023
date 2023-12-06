@@ -9,7 +9,7 @@ Each folder has a file with the solution. input is not sent to repo per AoC rule
 - [x] [Day 3](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%203)
 - [x] [Day 4](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%204)
 - [x] [Day 5](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%205)
-- [ ] [Day 6](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%206)
+- [x] [Day 6](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%206)
 - [ ] [Day 7](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%207)
 - [ ] [Day 8](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%208)
 - [ ] [Day 9](https://github.com/AleksaMarinkovic/AdventOfCode2023/tree/main/Day%209)
